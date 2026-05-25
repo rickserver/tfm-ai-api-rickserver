@@ -1,25 +1,24 @@
 FROM python:3.12-slim
 
+# Crear directorio de trabajo
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+# Instalar dependencias del sistema mínimas
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for better caching
+# Copiar requirements primero (mejor cache)
 COPY requirements.txt .
 
-# Install Python dependencies
+# Instalar dependencias Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY main.py .
-COPY src/ ./src/
-COPY data/ ./data/
+# Copiar el código
+COPY . .
 
-# Expose port
+# Exponer puerto FastAPI
 EXPOSE 8000
 
-# Run the application
-CMD ["python", "main.py"]
+# Comando de arranque con Uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
