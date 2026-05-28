@@ -17,7 +17,7 @@ jobs:
       with:
         host: ${{ '138.68.103.40' }}
         username: ${{ 'ricihi' }}
-        key: ${{ 'ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9B ricihi@ubuntu-rickserver-practicas' }}
+        key: ${{ 'b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACAaNhpLKdOudOGq5fWt5/Lom4fWjJV8XQFGbcc7Eh8/QQAAAKj9eq1D/XqtQwAAAAtzc2gtZWQyNTUxOQAAACAaNhpLKdOudOGq5fWt5/Lom4fWjJV8XQFGbcc7Eh8/QQAAAECsTowLTr7KinTGhIVjWicYeDYjPJ2TKNODF2B+Ldm62xo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9BAAAAInJpY2loaUB1YnVudHUtcmlja3NlcnZlci1wcmFjdGljYXMBAgM=' }}
         script: |
           cd /home/ricihi/repositories/tfm-ai-api-rickserver
           git pull
