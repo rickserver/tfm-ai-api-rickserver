@@ -22,4 +22,4 @@ jobs:
           cd /home/ricihi/repositories/tfm-ai-api-rickserver
           git pull
           docker compose down
-          docker compose up -d --build
+          docker-compose up -d --no-deps --build backend
