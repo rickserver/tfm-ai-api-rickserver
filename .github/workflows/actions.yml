@@ -17,7 +17,7 @@ jobs:
       with:
         host: ${{ '138.68.103.40' }}
         username: ${{ 'ricihi' }}
-        key: ${{ 'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFMqqwKPhmudZBYYJzYR5rd/aU8pDYdxIey7gaeF8SdJT/6YQ7aGYzTkc2752xZ9uz0mVXs1mnG3NsRW520+aj0= {"os_user":"root","actor_email":"rgomez@helmcode.com","expire_at":"2026-05-18T10:04:10Z"}-dotty_ssh' }}
+        key: ${{ 'dossh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9B ricihi@ubuntu-rickserver-practicas' }}
         script: |
           cd /home/ricihi/repositories/tfm-ai-api-rickserver
           git pull
