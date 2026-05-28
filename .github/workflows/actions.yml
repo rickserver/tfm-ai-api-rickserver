@@ -15,9 +15,9 @@ jobs:
     - name: Deploy via SSH
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ '138.68.103.40' }}
-        username: ${{ 'ricihi' }}
-        key: ${{ '-----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACAaNhpLKdOudOGq5fWt5/Lom4fWjJV8XQFGbcc7Eh8/QQAAAKj9eq1D/XqtQwAAAAtzc2gtZWQyNTUxOQAAACAaNhpLKdOudOGq5fWt5/Lom4fWjJV8XQFGbcc7Eh8/QQAAAECsTowLTr7KinTGhIVjWicYeDYjPJ2TKNODF2B+Ldm62xo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9BAAAAInJpY2loaUB1YnVudHUtcmlja3NlcnZlci1wcmFjdGljYXMBAgM=-----END OPENSSH PRIVATE KEY-----' }}
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.VPS_SSH_KEY }}
         script: |
           cd /home/ricihi/repositories/tfm-ai-api-rickserver
           git pull
