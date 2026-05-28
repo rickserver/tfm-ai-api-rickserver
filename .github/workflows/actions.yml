@@ -1,18 +1,25 @@
-name: Docker Push/Pull AUTO
+name: Deploy to VPS
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker compose up -d --build
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ '138.68.103.40' }}
+        username: ${{ 'ricihi' }}
+        key: ${{ 'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFMqqwKPhmudZBYYJzYR5rd/aU8pDYdxIey7gaeF8SdJT/6YQ7aGYzTkc2752xZ9uz0mVXs1mnG3NsRW520+aj0= {"os_user":"root","actor_email":"rgomez@helmcode.com","expire_at":"2026-05-18T10:04:10Z"}-dotty_ssh' }}
+        script: |
+          cd /home/ricihi/repositories/tfm-ai-api-rickserver
+          git pull
+          docker compose down
+          docker compose up -d --build
