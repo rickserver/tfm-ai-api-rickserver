@@ -17,7 +17,7 @@ jobs:
       with:
         host: ${{ '138.68.103.40' }}
         username: ${{ 'ricihi' }}
-        key: ${{ 'dossh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9B ricihi@ubuntu-rickserver-practicas' }}
+        key: ${{ 'ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBo2Gksp06504arl9a3n8uibh9aMlXxdAUZtxzsSHz9B ricihi@ubuntu-rickserver-practicas' }}
         script: |
           cd /home/ricihi/repositories/tfm-ai-api-rickserver
           git pull
