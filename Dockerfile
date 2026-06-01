@@ -19,7 +19,7 @@ COPY src/ ./src/
 COPY data/ ./data/
 
 # Expose port
-EXPOSE 8000
+EXPOSE 9000
 
 # Run the application
 CMD ["python", "main.py"]
