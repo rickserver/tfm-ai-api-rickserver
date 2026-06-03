@@ -19,6 +19,6 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
-          cd /home/ricihi/repositories/tfm-ai-api-rickserver
+          cd /home/ricihi/repositories/repo_prod/tfm-ai-api-rickserver
           git pull
           docker compose up -d --no-deps --build backend
